@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-headline: 'Barlow Condensed', 'Oswald', 'Anton', sans-serif;
+  --font-display: 'Barlow Condensed', 'Oswald', 'Anton', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-main: #FFFFFF;
+    --card-bg: #F5F5F5;
+    --card-border: #E5E5E5;
+    --text-primary: #111111;
+    --text-secondary: #707072;
+    
+    --volt: #C5FF00;
+    --volt-dark: #A8DB00;
+    --volt-soft: #EEFF99;
+    --nike-orange: #FA5400;
+    --nike-crimson: #E01A22;
+    --nike-blue: #0047FF;
+  }
+
+  .dark {
+    --bg-main: #0A0A0A;
+    --card-bg: #141414;
+    --card-border: #242424;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1AA;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Map display classes to Nike condensed typography */
+  h1, h2, h3, h4, .font-display, [class*="Space_Grotesk"] {
+    font-family: 'Barlow Condensed', 'Oswald', 'Anton', sans-serif !important;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Nike Signature Typography Utilities */
+.font-nike-headline {
+  font-family: 'Barlow Condensed', 'Oswald', 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+.font-nike-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Nike Pill Buttons (As seen in the screenshot 'Shop NFL') */
+.nike-pill-white {
+  background-color: #FFFFFF;
+  color: #111111;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.625rem 1.5rem;
+  border: 1px solid #E5E5E5;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.nike-pill-white:hover {
+  background-color: #F0F0F0;
+  transform: translateY(-1px);
+}
+.nike-pill-white:active {
+  transform: translateY(1px);
+}
+
+.nike-pill-black {
+  background-color: #111111;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 0.625rem 1.5rem;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+.nike-pill-black:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+}
+.nike-pill-black:active {
+  transform: translateY(1px);
+}
+
+.nike-pill-volt {
+  background-color: #C5FF00;
+  color: #111111;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  border-radius: 9999px;
+  padding: 0.625rem 1.5rem;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(197, 255, 0, 0.3);
+}
+.nike-pill-volt:hover {
+  background-color: #B5EB00;
+  transform: translateY(-1px);
+}
+.nike-pill-volt:active {
+  transform: translateY(1px);
+}
+
+/* Nike Volt Performance Button */
+.btn-volt {
+  background-color: #C5FF00;
+  color: #111111;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-volt:hover {
+  background-color: #b5eb00;
+  transform: translateY(-1px);
+}
+.btn-volt:active {
+  transform: translateY(1px);
+}
+
+/* Nike Black Solid Action Button */
+.btn-nike-black {
+  background-color: #111111;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 9999px;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-nike-black:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+}
+.btn-nike-black:active {
+  transform: translateY(1px);
+}
+
+/* Nike Light Gray Card / Adaptive Card */
+.nike-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+}
+
+.dark .btn-nike-black {
+  background-color: #FFFFFF;
+  color: #111111;
+}
+.dark .btn-nike-black:hover {
+  background-color: #F0F0F0;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #111111;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #C5FF00;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5FF00;
+}
